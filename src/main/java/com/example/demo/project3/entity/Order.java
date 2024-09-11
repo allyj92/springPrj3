@@ -19,7 +19,7 @@ import lombok.ToString;
 @Table(name="tblOrder")
 
 @Getter
-@Setter
+@Setter 
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
