@@ -2,6 +2,8 @@ package com.example.demo.project3.entity;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +28,8 @@ import lombok.ToString;
 @Builder
 public class Order {
 	
+	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false)
@@ -35,6 +39,7 @@ public class Order {
 	String customer_name;
 	
 
+	@DateTimeFormat(pattern ="yyyy-MM-dd")
 	@Column(nullable = false)
 	LocalDate orderDate;
 	

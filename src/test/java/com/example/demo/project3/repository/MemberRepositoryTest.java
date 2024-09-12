@@ -1,5 +1,6 @@
 package com.example.demo.project3.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,14 +28,51 @@ public class MemberRepositoryTest {
 	@Transactional
 	@Rollback(false)
 	public void 데이터삽입() {
-		Member member = Member
+		
+		List<Member> list = new ArrayList<>();
+		Member member1 = Member
 				.builder()
-				.userId("yoyt22")
+				.userId("admin")
 				.grade("관리자")
 				.password("1234")
 				.build();
 		
-		memberRepository.save(member);
+//		memberRepository.save(member1);
+		
+		Member member2 = Member
+				.builder()
+				.userId("user1")
+				.grade("사용자")
+				.password("1234")
+				.build();
+		
+//		memberRepository.save(member2);
+		
+		Member member3 = Member
+				.builder()
+				.userId("user2")
+				.grade("사용자")
+				.password("1234")
+				.build();
+		
+//		memberRepository.save(member3);
+		
+		Member member4 = Member
+				.builder()
+				.userId("yoyr22")
+				.grade("관리자")
+				.password("1234")
+				.build();
+		
+//		memberRepository.save(member4);
+		
+		list.add(member1);
+		list.add(member2);
+		list.add(member3);
+		list.add(member4);
+		
+		memberRepository.saveAll(list);
+		
 	}
 	
 	
